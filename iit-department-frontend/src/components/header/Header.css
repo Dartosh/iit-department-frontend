@@ -1,0 +1,36 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 50px;
+}
+
+h1 {
+    display: block;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    color: #007a48;
+}
+
+nav ul {
+    margin: 0;
+    display: flex;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: 10px 20px;
+    line-height: 60px;
+}
+
+nav li {
+    list-style: none;
+}
+
