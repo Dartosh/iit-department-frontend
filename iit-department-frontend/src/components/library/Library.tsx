@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import './Main.css';
+import './Library.css';
 
-class Main extends Component<any, any> {
+class Library extends Component<any, any> {
     render() {
         return(
             <main>
-                MAIN
+                <h3>LIBRARY</h3>
             </main>
         )
     }
 }
 
-export default Main;
+export default Library;

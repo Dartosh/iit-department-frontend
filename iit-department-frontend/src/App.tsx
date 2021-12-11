@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import './App.css';
-import Home from './containers/home/Home';
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
-function App() {
-  return (
-    <>
-      <Home />
-    </>
-  );
-}
+// @ts-ignore
+const App = ( { children } ) => (
+    <Fragment>
+        <Header />
+        {children}
+        <Footer />
+    </Fragment>
+);
 
 export default App;
