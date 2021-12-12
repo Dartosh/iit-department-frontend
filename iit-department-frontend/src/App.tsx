@@ -7,9 +7,11 @@ import Footer from "./components/footer/Footer";
 
 const App: React.FC = ( { children } ) => (
     <Fragment>
-        <Header />
-        {children}
-        <Footer />
+        <div className="wrapper">
+            <Header />
+            {children}
+            <Footer />
+        </div>
     </Fragment>
 );
 

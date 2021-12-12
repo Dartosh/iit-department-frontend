@@ -7,7 +7,7 @@ class Header extends Component<any, any> {
         return(
             <header>
                 <h1>
-                    <a href="#">IIT Department</a>
+                    <Link to='/'>IIT Department</Link>
                 </h1>
                 <nav>
                     <ul>
