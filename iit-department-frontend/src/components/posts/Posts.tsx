@@ -9,17 +9,21 @@ const SEARCH_PARAM = 'query=';
 
 
 
-class Posts extends Component<any, any> {
+
+
+
+class Posts extends Component {
     state = {
-        searchQuery: '',
         result: {},
+    }
+
+    constructor(props: any) {
+        super(props);
     }
 
 
 
     componentDidMount() {
-        const { searchQuery } = this.state;
-
         axios({
             method: 'post',
             url: BASE_PATH,
@@ -40,25 +44,28 @@ class Posts extends Component<any, any> {
         const { data } = result;
         const { access } = data;
 
-        axios.get("http://127.0.0.1:8000/api/v1/feed/", {
+        axios.get("http://127.0.0.1:8000/api/v1/wall/1", {
             headers: {
                 "accept": "application/json",
-                "Authorization": `Bearer ${access}`
+                Authorization: `JWT ${access}`
             }
         })
+            .then(result => this.setState({
+                result: result,
+            }))
+            .catch(error => console.log(error));
 
-        //this.setState({ result });
     }
 
 
     render() {
-        const { searchQuery, result } = this.state;
-        const { hits = [] }: any = result;
-
+        const { result } = this.state;
+        const { data = [] }: any = result;
+        console.log(data);
         return(
             <main>
                 <h3>POSTS</h3>
-                {hits.map(({ id, create_date, user, text, comments_count }: any) => (
+                {data.map(({ id, create_date, user, text, comments_count }: any) => (
                     <article className="post">
                         <h4>{id}</h4>
                         <p>{text}</p>
