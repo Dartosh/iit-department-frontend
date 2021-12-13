@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import './Posts.css';
 import axios from "axios";
 
-const HEROKU_APP = 'https://cors-anywhere.herokuapp.com/';
+
 const BASE_PATH = 'http://127.0.0.1:8000/auth/jwt/create/';
-const SEARCH_PATH = '/search';
-const SEARCH_PARAM = 'query=';
+
 
 
 

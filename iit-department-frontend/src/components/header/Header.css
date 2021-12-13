@@ -1,23 +1,37 @@
 header {
-    background-color: #282c34;
+    background-color: #101d25;
     display: flex;
     justify-content: space-between;
     width: 100%;
     min-height: 50px;
     border-radius: 0 0 10px 10px;
+    font-family: 'Ubuntu';
+    font-weight: bold;
 }
 
 h1 {
-    display: block;
     margin: 0;
+}
+
+h1 a {
+    display: block;
     padding: 10px 20px;
+    line-height: 60px;
+    color: #1a404f;
+    text-shadow: 2px 2px #76b995;
+    transition-duration: 0.2s;
+    font-style: italic;
+}
+
+h1 a:hover {
+    color: #76b995;
+    text-shadow: 2px 2px #1a404f;
 }
 
 
 nav {
     display: flex;
     justify-content: flex-end;
-    color: #007a48;
 }
 
 nav ul {
@@ -30,9 +44,69 @@ nav a {
     display: block;
     padding: 10px 20px;
     line-height: 60px;
+    color: #76b995;
 }
 
 nav li {
     list-style: none;
+    transition-duration: 0.2s;
 }
 
+nav li:hover {
+    background-color: #2c424f;
+}
+
+.header__auth-block {
+    display: flex;
+    align-items: center;
+
+    padding: 10px 20px;
+}
+
+.header__auth-block__signin {
+    margin-right: 20px;
+
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    font-style: normal;
+    color: #76b995;
+
+    border-style: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 60px;
+
+    background-color: #2c424f;
+    box-shadow: 2px 2px #76b995;
+
+    transition-duration: 0.2s;
+}
+
+.header__auth-block__signup {
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    font-style: normal;
+    color: #76b995;
+
+    border-style: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 60px;
+
+    background-color: #2c424f;
+    box-shadow: 2px 2px #76b995;
+
+    transition-duration: 0.2s;
+}
+
+.header__auth-block__signin:active {
+    box-shadow: none;
+}
+
+.header__auth-block__signup:active {
+    box-shadow: none;
+}
+
+.header__auth-block__signin:hover, .header__auth-block__signup:hover {
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import './Header.css';
+import AuthControl from "./authorization/AuthControl";
 
 class Header extends Component<any, any> {
     render() {
@@ -28,6 +29,7 @@ class Header extends Component<any, any> {
                         </li>
                     </ul>
                 </nav>
+                <AuthControl />
             </header>
         )
     }
