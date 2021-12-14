@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import '../Header.css';
-import ModalLogin from "./ModalLogin";
-
+import ModalWindow from "./ModalWindow";
+import Button from "../../button/Button";
 
 
 type authState = {
     isLoggedIn: boolean,
     isOpen: boolean,
 }
+
 class AuthControl extends Component<any, authState> {
     state = {
         isLoggedIn: false,
         isOpen: false,
     }
-
 
     constructor(props: any) {
         super(props);
@@ -22,17 +22,16 @@ class AuthControl extends Component<any, authState> {
         this.handleLogin = this.handleLogin.bind(this);
     }
 
-
-    openModal(e: React.MouseEvent<HTMLButtonElement>) {
+    openModal() {
         this.setState({ isOpen: true });
     }
 
-    handleLogin(e: React.MouseEvent<HTMLButtonElement>) {
+    handleLogin() {
         console.log('Login function!');
         this.setState({ isOpen: false });
     }
 
-    handleClose(e: React.MouseEvent<HTMLButtonElement>) {
+    handleClose() {
         console.log('Cancel function!');
         this.setState({ isOpen: false });
     }
@@ -41,17 +40,20 @@ class AuthControl extends Component<any, authState> {
 
         return(
             <div className="header__auth-block">
-                <button className="header__auth-block__signin"
-                        onClick={this.openModal} >
-                    SignIn
-                </button>
-                <button className="header__auth-block__signup">
-                    SignUp
-                </button>
-                <ModalLogin title="Login"
-                            isOpen={this.state.isOpen}
-                            onClose={this.handleClose}
-                            onSubmit={this.handleLogin}
+                <Button active={false}
+                        disabled={false}
+                        children="SignIn"
+                        onClick={this.openModal}
+                        className='btn'/>
+                <Button active={false}
+                        disabled={false}
+                        children="SignUp"
+                        onClick={this.openModal}
+                        className='btn'/>
+                <ModalWindow title="Login"
+                             isOpen={this.state.isOpen}
+                             onClose={this.handleClose}
+                             onSubmit={this.handleLogin}
                 />
             </div>
         )

@@ -1,0 +1,64 @@
+.auth-background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-background__auth-window {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 350px;
+    justify-content: end;
+    border-radius: 10px;
+    padding: 30px;
+
+    background: linear-gradient(180deg, #1a404f, #101d25) fixed;
+
+    font-family: 'Ubuntu', serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+.auth-background__auth-window h2 {
+    margin: 20px 0;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    color: #1a404f;
+    text-shadow: 2px 2px #76b995;
+}
+
+.auth-background__auth-window form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.auth-background__auth-window form label{
+    width: 100%;
+    text-align: center;
+}
+
+.auth-background__auth-window form input{
+    max-width: 500px;
+    margin: 10px 0;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+
+    font-weight: bold;
+}
+
+.auth-background__auth-window form input:focus{
+    outline: #76b995 solid 2px;
+}
+
