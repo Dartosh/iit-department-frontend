@@ -20,7 +20,7 @@ h3 {
 }
 
 .post span {
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu', serif;
     font-weight: normal;
     font-style: italic;
     opacity: 40%;

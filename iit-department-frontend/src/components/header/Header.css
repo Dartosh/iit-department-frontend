@@ -5,7 +5,7 @@ header {
     width: 100%;
     min-height: 50px;
     border-radius: 0 0 10px 10px;
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu', serif;
     font-weight: bold;
 }
 
@@ -63,50 +63,110 @@ nav li:hover {
     padding: 10px 20px;
 }
 
+button {
+    font-family: 'Ubuntu', serif;
+    font-weight: bold;
+    font-style: normal;
+    color: #76b995;
+
+    border-style: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 60px;
+
+    background-color: #2c424f;
+    box-shadow: 2px 2px #76b995;
+
+    transition-duration: 0.2s;
+}
+
 .header__auth-block__signin {
     margin-right: 20px;
-
-    font-family: 'Ubuntu';
-    font-weight: bold;
-    font-style: normal;
-    color: #76b995;
-
-    border-style: none;
-    border-radius: 5px;
-    height: 30px;
-    width: 60px;
-
-    background-color: #2c424f;
-    box-shadow: 2px 2px #76b995;
-
-    transition-duration: 0.2s;
 }
 
-.header__auth-block__signup {
-    font-family: 'Ubuntu';
-    font-weight: bold;
-    font-style: normal;
-    color: #76b995;
 
-    border-style: none;
-    border-radius: 5px;
-    height: 30px;
-    width: 60px;
-
-    background-color: #2c424f;
-    box-shadow: 2px 2px #76b995;
-
-    transition-duration: 0.2s;
-}
-
-.header__auth-block__signin:active {
+button:active {
     box-shadow: none;
 }
-
-.header__auth-block__signup:active {
-    box-shadow: none;
-}
-
-.header__auth-block__signin:hover, .header__auth-block__signup:hover {
+button:hover {
     cursor: pointer;
 }
+
+.auth-background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-background__auth-window {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 350px;
+    justify-content: end;
+    border-radius: 10px;
+    padding: 30px;
+
+    background: linear-gradient(180deg, #1a404f, #101d25) fixed;
+
+    font-family: 'Ubuntu', serif;
+    font-weight: bold;
+    font-style: normal;
+}
+.auth-background__auth-window__exit-button {
+    background-color: #76b995;
+    color: #1a404f;
+    box-shadow: none;
+    opacity: 40%;
+}
+
+.auth-background__auth-window__exit-button:hover {
+    opacity: 100%;
+}
+
+.auth-background__auth-window h2 {
+    margin: 20px 0;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    color: #1a404f;
+    text-shadow: 2px 2px #76b995;
+}
+
+.auth-background__auth-window form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.auth-background__auth-window form label{
+    width: 100%;
+    text-align: center;
+}
+
+.auth-background__auth-window form input{
+    max-width: 500px;
+    margin: 10px 0;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+
+    font-weight: bold;
+}
+
+.auth-background__auth-window form input:focus{
+    outline: #76b995 solid 2px;
+}
+
+.auth-background__auth-window form button{
+    width: 100px;
+    margin: 20px calc(50% - 50px) 0 calc(50% - 50px);
+}
+

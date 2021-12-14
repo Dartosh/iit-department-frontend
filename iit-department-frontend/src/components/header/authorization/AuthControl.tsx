@@ -1,78 +1,58 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import '../Header.css';
+import ModalLogin from "./ModalLogin";
 
 
-type PortalProps = {
-    children: React.ReactNode;
-}
-class portalLogin extends Component<PortalProps> {
-    private el: HTMLDivElement = document.createElement('div')
-
-    public componentDidMount(): void {
-        document.body.appendChild(this.el);
-    }
-
-    public componentWillUnmount(): void {
-        document.body.removeChild(this.el);
-    }
-
-    public render(): React.ReactElement<PortalProps> {
-        return ReactDOM.createPortal(this.props.children, this.el);
-    }
-}
-
-const LoginButton: React.FC = () => {
-    return(
-        <button className="header__auth-block__signin">
-            SignIn
-        </button>
-    )
-}
-const LogoutButton: React.FC = () => {
-    return(
-        <button className="header__auth-block__signin">
-            SignOut
-        </button>
-    )
-}
-const SignupButton: React.FC = () => {
-    return(
-        <button className="header__auth-block__signup">
-            SignUp
-        </button>
-    )
-}
 
 type authState = {
     isLoggedIn: boolean,
+    isOpen: boolean,
 }
 class AuthControl extends Component<any, authState> {
     state = {
         isLoggedIn: false,
+        isOpen: false,
     }
+
 
     constructor(props: any) {
         super(props);
-        this.handleLoginClick = this.handleLoginClick.bind(this);
-        this.handleLogoutClick = this.handleLogoutClick.bind(this);
-        this.state = {isLoggedIn: false};
+        this.openModal = this.openModal.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
     }
 
 
-    handleLoginClick(e: any): void {
-        this.setState({isLoggedIn: true});
+    openModal(e: React.MouseEvent<HTMLButtonElement>) {
+        this.setState({ isOpen: true });
     }
 
-    handleLogoutClick(e: any): void {
-        this.setState({isLoggedIn: false});
+    handleLogin(e: React.MouseEvent<HTMLButtonElement>) {
+        console.log('Login function!');
+        this.setState({ isOpen: false });
+    }
+
+    handleClose(e: React.MouseEvent<HTMLButtonElement>) {
+        console.log('Cancel function!');
+        this.setState({ isOpen: false });
     }
 
     render() {
 
         return(
             <div className="header__auth-block">
-                <LoginButton />
-                <SignupButton />
+                <button className="header__auth-block__signin"
+                        onClick={this.openModal} >
+                    SignIn
+                </button>
+                <button className="header__auth-block__signup">
+                    SignUp
+                </button>
+                <ModalLogin title="Login"
+                            isOpen={this.state.isOpen}
+                            onClose={this.handleClose}
+                            onSubmit={this.handleLogin}
+                />
             </div>
         )
     }

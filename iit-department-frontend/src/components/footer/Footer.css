@@ -5,7 +5,7 @@ footer {
     width: 100%;
     min-height: 50px;
     border-radius: 10px 10px 0 0;
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu', serif;
     font-weight: bold;
     font-style: italic;
 }
