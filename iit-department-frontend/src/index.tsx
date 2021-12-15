@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { Provider } from 'react-redux';
+//import store from './store';
+
 import {BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from './components/home/Home';
-import Library from "./components/library/Library";
-import Posts from "./components/posts/Posts";
-import Post from "./components/post/Post";
-import Profile from "./components/profile/Profile";
+import Home from './containers/home/Home';
+import Library from "./containers/library/Library";
+import Posts from "./containers/posts/Posts";
+import Post from "./containers/post/Post";
+import Profile from "./containers/profile/Profile";
 
 import './index.css';
 import App from './App';
@@ -15,17 +18,19 @@ import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render((
-        <BrowserRouter>
-            <App>
-                <Routes>
-                    <Route path='/' element={<Home />}/>
-                    <Route path='/library' element={<Library />}/>
-                    <Route path='/posts' element={<Posts />}/>
-                    <Route path='/post' element={<Post />}/>
-                    <Route path='/profile' element={<Profile />}/>
-                </Routes>
-            </App>
-        </BrowserRouter>
+        //<Provider store={store}>
+            <BrowserRouter>
+                <App>
+                    <Routes>
+                        <Route path='/' element={<Home />}/>
+                        <Route path='/library' element={<Library />}/>
+                        <Route path='/posts' element={<Posts />}/>
+                        <Route path='/post' element={<Post />}/>
+                        <Route path='/profile' element={<Profile />}/>
+                    </Routes>
+                </App>
+            </BrowserRouter>
+        //</Provider>
     ), document.getElementById('root')
 );
 

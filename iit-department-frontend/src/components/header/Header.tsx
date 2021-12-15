@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import './Header.css';
-import AuthControl from "./authorization/AuthControl";
+import AuthControl from "../../containers/authorization/AuthControl";
 
 class Header extends Component<any, any> {
     render() {

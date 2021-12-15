@@ -1,18 +1,22 @@
 import React, { Component } from "react";
-import '../Header.css';
+import '../../components/header/Header.css';
 import ModalWindow from "./ModalWindow";
-import Button from "../../button/Button";
+import Button from "../../components/button/Button";
 
 
 type authState = {
     isLoggedIn: boolean,
     isOpen: boolean,
+    loginText: string,
+    passwordText: string,
 }
 
 class AuthControl extends Component<any, authState> {
     state = {
         isLoggedIn: false,
         isOpen: false,
+        loginText: '',
+        passwordText: '',
     }
 
     constructor(props: any) {
@@ -20,10 +24,12 @@ class AuthControl extends Component<any, authState> {
         this.openModal = this.openModal.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
+        this.handleInputPasswordChange = this.handleInputPasswordChange.bind(this);
+        this.handleInputLoginChange = this.handleInputLoginChange.bind(this);
     }
 
     openModal() {
-        this.setState({ isOpen: true });
+        this.setState({ isOpen: true, loginText: '', passwordText: ''  });
     }
 
     handleLogin() {
@@ -36,8 +42,19 @@ class AuthControl extends Component<any, authState> {
         this.setState({ isOpen: false });
     }
 
-    render() {
+    handleInputLoginChange( e: React.ChangeEvent<HTMLInputElement> ) {
+        this.setState({
+            loginText: e.target.value,
+        })
+    }
 
+    handleInputPasswordChange( e: React.ChangeEvent<HTMLInputElement>) {
+        this.setState({
+            passwordText: e.target.value,
+        })
+    }
+
+    render() {
         return(
             <div className="header__auth-block">
                 <Button active={false}
@@ -54,6 +71,10 @@ class AuthControl extends Component<any, authState> {
                              isOpen={this.state.isOpen}
                              onClose={this.handleClose}
                              onSubmit={this.handleLogin}
+                             loginText={this.state.loginText}
+                             passwordText={this.state.passwordText}
+                             handleLoginChange={this.handleInputLoginChange}
+                             handlePasswordChange={this.handleInputPasswordChange}
                 />
             </div>
         )

@@ -5,12 +5,6 @@ import axios from "axios";
 
 const BASE_PATH = 'http://127.0.0.1:8000/auth/jwt/create/';
 
-
-
-
-
-
-
 class Posts extends Component {
     state = {
         result: {},
