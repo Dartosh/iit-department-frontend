@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
-//import store from './store';
+import store from './store';
 
 import {BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './containers/home/Home';
@@ -18,7 +18,7 @@ import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render((
-        //<Provider store={store}>
+        <Provider store={store}>
             <BrowserRouter>
                 <App>
                     <Routes>
@@ -30,7 +30,7 @@ ReactDOM.render((
                     </Routes>
                 </App>
             </BrowserRouter>
-        //</Provider>
+        </Provider>
     ), document.getElementById('root')
 );
 

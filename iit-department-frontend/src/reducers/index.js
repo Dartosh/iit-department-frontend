@@ -1,7 +1,7 @@
-// import { combineReducers } from 'redux';
-//
-// // Создание объекта редьюсеров
-// const rootReducer = combineReducers();
-//
-// export default rootReducer;
-export const c = 0;
+import { combineReducers } from 'redux';
+import user from './user';
+
+// Возвращение объекта рельюсеров
+const rootReducer = combineReducers({ user });
+
+export default rootReducer;
