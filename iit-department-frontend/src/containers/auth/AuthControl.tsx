@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import '../../components/header/Header.css';
-import ModalWindow from "./ModalWindow";
+import LoginModal from "../../components/auth/login/LoginModal";
 import Button from "../../components/button/Button";
 
 
@@ -67,14 +67,14 @@ class AuthControl extends Component<any, authState> {
                         children="SignUp"
                         onClick={this.openModal}
                         className='btn'/>
-                <ModalWindow title="Login"
-                             isOpen={this.state.isOpen}
-                             onClose={this.handleClose}
-                             onSubmit={this.handleLogin}
-                             loginText={this.state.loginText}
-                             passwordText={this.state.passwordText}
-                             handleLoginChange={this.handleInputLoginChange}
-                             handlePasswordChange={this.handleInputPasswordChange}
+                <LoginModal title="Login"
+                            isOpen={this.state.isOpen}
+                            onClose={this.handleClose}
+                            onSubmit={this.handleLogin}
+                            loginText={this.state.loginText}
+                            passwordText={this.state.passwordText}
+                            handleLoginChange={this.handleInputLoginChange}
+                            handlePasswordChange={this.handleInputPasswordChange}
                 />
             </div>
         )

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './Home.css';
-import AuthControl from "../authorization/AuthControl"
+import AuthControl from "../auth/AuthControl"
 
 class Home extends Component<any, any> {
     render() {
