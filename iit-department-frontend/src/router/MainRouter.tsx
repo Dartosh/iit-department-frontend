@@ -18,7 +18,6 @@ const MainRouter: React.FC<IMainRouterProps> = (props) => {
     return(
         <BrowserRouter>
             <App>
-
                 <Routes>
                     <Route path='/' element={<Home />}/>
                     <Route path='/library' element={<Library />}/>

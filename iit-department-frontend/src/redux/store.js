@@ -1,5 +1,5 @@
 import { createStore, compose } from 'redux';
-import rootReducer from './reducers/index';
+import rootReducer from './reducers';
 
 
 // Логика, отделённая игнором lint нужна для подключения к приложению

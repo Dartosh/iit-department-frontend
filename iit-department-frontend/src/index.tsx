@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './redux/store';
 
 import './index.css';
 import App from './App';
@@ -10,12 +10,13 @@ import reportWebVitals from './reportWebVitals';
 import MainRouter from "./router/MainRouter";
 
 
+const app = (
+    <Provider store={store}>
+        <MainRouter auth={true} />
+    </Provider>
+);
 
-ReactDOM.render((
-        <Provider store={store}>
-            <MainRouter auth={true} />
-        </Provider>
-    ), document.getElementById('root')
+ReactDOM.render(app, document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
