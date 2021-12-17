@@ -1,5 +1,5 @@
 import { handleActions } from "redux-actions";
-import { IUser } from "../../types/user";
+import { IUser } from "../../types";
 import { UserActions } from "../actions";
 
 const initialState = null;

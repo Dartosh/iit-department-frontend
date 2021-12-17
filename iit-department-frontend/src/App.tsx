@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import './App.css';
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import LoginPage from "./containers/auth/AuthControl";
+import LoginPage from "./containers/auth/LoginContainer";
 
 
 const App: React.FC = ( { children } ) => (

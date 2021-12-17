@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Header.css';
-import AuthControl from "../../containers/auth/AuthControl";
+import LoginContainer from "../../containers/auth/LoginContainer";
 import Nav from "../nav/Nav";
 
 
@@ -12,7 +12,7 @@ const Header: React.FC = () => {
                 <Link to='/'>IIT Department</Link>
             </h1>
             <Nav />
-            <AuthControl />
+            <LoginContainer />
         </header>
     )
 }

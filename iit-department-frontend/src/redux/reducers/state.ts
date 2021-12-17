@@ -1,8 +1,7 @@
-import { IUser } from "../../types/user";
-import { IAuth } from "../../types/auth";
+import { IUser, IAuth } from "../../types";
 
 // Интерфейс, описывающий дерево состояния
-export interface IRootReducer {
+export interface IRootState {
     router: any,
     user: IUser,
     auth: IAuth,
