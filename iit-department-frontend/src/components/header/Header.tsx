@@ -1,38 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import './Header.css';
-import AuthControl from "../../containers/authorization/AuthControl";
+import LoginContainer from "../../containers/auth/LoginContainer";
+import Nav from "../nav/Nav";
 
-class Header extends Component<any, any> {
-    render() {
-        return(
-            <header>
-                <h1>
-                    <Link to='/'>IIT Department</Link>
-                </h1>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to='/'>Home</Link>
-                        </li>
-                        <li>
-                            <Link to='library'>Library</Link>
-                        </li>
-                        <li>
-                            <Link to='/posts'>Posts</Link>
-                        </li>
-                        <li>
-                            <Link to='/post'>Post</Link>
-                        </li>
-                        <li>
-                            <Link to='/profile'>Profile</Link>
-                        </li>
-                    </ul>
-                </nav>
-                <AuthControl />
-            </header>
-        )
-    }
+
+const Header: React.FC = () => {
+    return(
+        <header>
+            <h1>
+                <Link to='/'>IIT Department</Link>
+            </h1>
+            <Nav />
+            <LoginContainer />
+        </header>
+    )
 }
 
 export default Header;
