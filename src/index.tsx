@@ -1,25 +1,36 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import App from './App';
+import { Route, Routes } from 'react-router';
+import Home from './containers/home/Home';
+import Library from './containers/library/Library';
+import Posts from './containers/posts/Posts';
+import Profile from './containers/profile/Profile';
+import { BrowserRouter } from 'react-router-dom';
+import Post from './components/post/Post';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import MainRouter from "./router/MainRouter";
 
 
 const app = (
     <Provider store={store}>
-        <MainRouter auth={true} />
+        <BrowserRouter>
+                <App>
+                    <Routes>
+                        <Route path='/' element={<Home />}/>
+                        <Route path='/library' element={<Library />}/>
+                        <Route path='/posts' element={<Posts />}/>
+                        <Route path='/post' element={<Post id={''} create_date={''} user={''} text={''} comments_count={''} />}/>
+                        <Route path='/profile' element={<Profile />}/>
+                    </Routes>
+                </App>
+        </BrowserRouter>
     </Provider>
 );
 
 ReactDOM.render(app, document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

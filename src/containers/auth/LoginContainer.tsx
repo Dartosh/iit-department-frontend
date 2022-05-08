@@ -1,10 +1,11 @@
-import React, {Component, Dispatch} from "react";
+import React, { Component, Dispatch } from "react";
+import { connect } from "react-redux";
+
 import '../../components/header/Header.css';
 import LoginModal from "../../components/auth/login/LoginModal";
 import Button from "../../components/button/Button";
 import { ILogin } from "../../types";
 import {AuthActions} from "../../redux/actions";
-import { connect/*, MapDispatchToProps*/ } from "react-redux";
 import {IRootState} from "../../redux/reducers/state";
 
 

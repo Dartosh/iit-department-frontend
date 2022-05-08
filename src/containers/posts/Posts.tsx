@@ -1,6 +1,8 @@
-import React, { Component } from "react";
-import './Posts.css';
+import { Component } from "react";
+
 import axios from "axios";
+
+import './Posts.css';
 
 
 const BASE_PATH = 'http://127.0.0.1:8000/auth/jwt/create/';
@@ -9,12 +11,6 @@ class Posts extends Component {
     state = {
         result: {},
     }
-
-    constructor(props: any) {
-        super(props);
-    }
-
-
 
     componentDidMount() {
         axios({

@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import { Component } from "react";
+
 import './Home.css';
 import LoginContainer from "../auth/LoginContainer"
 
