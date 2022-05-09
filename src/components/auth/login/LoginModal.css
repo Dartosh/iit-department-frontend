@@ -18,7 +18,7 @@
     border-radius: 10px;
     padding: 30px;
 
-    background: linear-gradient(180deg, #1a404f, #101d25) fixed;
+    background: white;
 
     font-family: 'Ubuntu', serif;
     font-weight: bold;
@@ -31,9 +31,9 @@
     font-size: 40px;
     width: 100%;
     text-align: center;
-    font-style: italic;
-    color: #1a404f;
-    text-shadow: 2px 2px #76b995;
+    /* font-style: italic; */
+    color: #8455a2;
+    /* text-shadow: 2px 2px rgb(157, 161, 254); */
 }
 
 .auth-background__auth-window form {
@@ -56,9 +56,11 @@
     border: none;
 
     font-weight: bold;
+
+    outline: #e2b4ff solid 2px;
 }
 
 .auth-background__auth-window form input:focus{
-    outline: #76b995 solid 2px;
+    outline: #8455a2 solid 2px;
 }
 

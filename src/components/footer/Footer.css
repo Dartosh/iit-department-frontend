@@ -1,5 +1,5 @@
 footer {
-    background-color: #101d25;
+    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -7,7 +7,7 @@ footer {
     border-radius: 10px 10px 0 0;
     font-family: 'Ubuntu', serif;
     font-weight: bold;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 h2 {
@@ -18,14 +18,14 @@ h2 a {
     display: block;
     padding: 10px 20px;
     line-height: 60px;
-    color: #1a404f;
-    text-shadow: 2px 2px #76b995;
+    color: white;
+    /* text-shadow:1px 1px white; */
     transition-duration: 0.2s;
 }
 
 h2 a:hover {
-    color: #76b995;
-    text-shadow: 2px 2px #1a404f;
+    color: #007ec8;
+    text-shadow: 1px 1px white;
 }
 
 
@@ -44,7 +44,7 @@ nav a {
     display: block;
     padding: 10px 20px;
     line-height: 60px;
-    color: #76b995;
+    color: white;
 }
 
 nav li {
