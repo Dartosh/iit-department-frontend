@@ -1,12 +1,18 @@
-import { all } from 'redux-saga/effects';
-import authSaga from './auth';
+import { takeEvery, put, call } from 'redux-saga/effects';
 
-// в sagas будут накапливаться саги, куда в yield all будут передаваться все saga-вызовы
+import { GET_LATEST_NEWS } from '../constants';
+import { getLatestNews } from "../../api";
+import { setLatestNews } from '../actions/actionCreator';
 
-// Фнкция-генератор, которая делает yield all
+export function* handleLatestNews(): Object {
+    const { hits } = yield call(getLatestNews);
+    yield put(setLatestNews(hits));
+}
+
+export function* watchClickSaga() {
+    yield takeEvery(GET_LATEST_NEWS, handleLatestNews);
+}
+
 export default function* rootSaga() {
-    yield all([]);
-    yield all([
-        authSaga(),
-    ]);
+    yield watchClickSaga();
 }

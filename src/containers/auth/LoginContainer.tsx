@@ -1,23 +1,11 @@
-import React, {Component, Dispatch} from "react";
+import React, { Component } from "react";
+
 import '../../components/header/Header.css';
 import LoginModal from "../../components/auth/login/LoginModal";
 import Button from "../../components/button/Button";
-import { ILogin } from "../../types";
-import {AuthActions} from "../../redux/actions";
-import { connect/*, MapDispatchToProps*/ } from "react-redux";
-import {IRootState} from "../../redux/reducers/state";
 
 
-type IAuthState = {
-    isOpen: boolean,
-    loginText: string,
-    passwordText: string,
-}
-
-
-type ILoginContainerProps =  ReturnType<typeof mapDispatchToProps>;
-
-class LoginContainer extends Component<ILoginContainerProps, IAuthState> {
+class LoginContainer extends Component {
     state = {
         isOpen: false,
         loginText: '',
@@ -87,13 +75,4 @@ class LoginContainer extends Component<ILoginContainerProps, IAuthState> {
 }
 
 
-
-const mapStateToProps = (state: IRootState) => ({
-
-})
-
-const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
-    signIn: (payload: ILogin) => dispatch(AuthActions.signIn(payload)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);
+export default LoginContainer;
