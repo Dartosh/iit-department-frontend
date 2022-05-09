@@ -1,4 +1,9 @@
+import axios from "axios";
+
+const BACKEND_BASE_URL = '127.0.0.1:8000/';
+
 export const getLatestNews = async (): Promise<string> => {
-    const res = await fetch('https://hn.algolia.com/api/v1/search?query=react&hitsPerPage=10&page=0');
-    return await res.json();
+    const res = await axios(BACKEND_BASE_URL + '/api/v1/feed');
+
+    return await res.data;
 }
