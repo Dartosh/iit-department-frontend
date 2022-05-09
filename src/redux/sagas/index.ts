@@ -1,16 +1,16 @@
-import { takeEvery, put, call } from 'redux-saga/effects';
+import { call, takeEvery, put } from 'redux-saga/effects';
+import loginUser from '../../api/login-user';
+import { setUserJwt } from '../actions/actionCreator';
 
-import { GET_LATEST_NEWS } from '../constants';
-import { getLatestNews } from "../../api";
-import { setLatestNews } from '../actions/actionCreator';
+import { GET_USER_JWT } from "../constants";
 
-export function* handleLatestNews(): Object {
-    const { hits } = yield call(getLatestNews);
-    yield put(setLatestNews(hits));
+export function* handleUserLogin(): any {
+    const user = yield call(loginUser);
+    yield put(setUserJwt(user));
 }
 
 export function* watchClickSaga() {
-    yield takeEvery(GET_LATEST_NEWS, handleLatestNews);
+    yield takeEvery(GET_USER_JWT, handleUserLogin);
 }
 
 export default function* rootSaga() {
