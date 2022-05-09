@@ -1,7 +1,7 @@
 import { SET_USER_JWT } from "../constants";
 
 const initialState = {
-    userInfo: [],
+    tokens: { },
 };
 
 const user = (state = initialState, action: any) => {
@@ -11,7 +11,7 @@ const user = (state = initialState, action: any) => {
         case SET_USER_JWT:
             return {
                 ...state,
-                userInfo: [...state.userInfo, ...payload],
+                tokens: { ...state.tokens, ...payload },
             }
         default:
             return state;

@@ -5,8 +5,8 @@ import { setUserJwt } from '../actions/actionCreator';
 import { GET_USER_JWT } from "../constants";
 
 export function* handleUserLogin(): any {
-    const user = yield call(loginUser);
-    yield put(setUserJwt(user));
+    const tokens = yield call(loginUser);
+    yield put(setUserJwt(tokens));
 }
 
 export function* watchClickSaga() {

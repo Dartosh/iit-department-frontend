@@ -1,26 +1,21 @@
-import axios from "axios";
-
 const BACKEND_BASE_URL = 'http://127.0.0.1:8000/';
-const username = 'admin';
-const password = 'admin';
+const data = {
+    username: 'admin',
+    password: 'admin',
+}
 
 const loginUser = async (): Promise<any> => {
-    const response = await axios({
-        // await axios({
-        method: 'post',
-        url: BACKEND_BASE_URL + 'auth/jwt/create/',
-        headers: {
-            "accept": "application/json",
-            "Content-Type": "application/json",
-        },
-        data: {
-            "username": `${username}`,
-            "password": `${password}`,
+    const res = await fetch(
+        BACKEND_BASE_URL + 'auth/jwt/create/',
+        {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
         }
-    });
-    const json = response.data.json();
-    console.log(json);
-    return json;
+    );
+    return await res.json();
 }
 
 export default loginUser;
