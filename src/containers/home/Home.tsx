@@ -1,16 +1,22 @@
-import { Component } from "react";
+import { useDispatch } from "react-redux";
 
 import './Home.css';
 import LoginContainer from "../auth/LoginContainer"
+import { getLatestNews } from "../../redux/actions/actionCreator";
 
-class Home extends Component<any, any> {
-    render() {
-        return(
-            <main>
-                <LoginContainer />
-            </main>
-        )
+const Home = () => {
+    const dispatch = useDispatch();
+
+    const handleNews = () => {
+        dispatch(getLatestNews());
     }
+
+    return(
+        <main>
+            <LoginContainer />
+            <button onClick={handleNews}>GetNews</button>
+        </main>
+    )
 }
 
 export default Home;

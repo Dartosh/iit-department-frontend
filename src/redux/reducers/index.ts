@@ -1,11 +1,9 @@
 import { combineReducers } from "redux";
 
-const test = (state = {}, action: any) => {
-    return state;
-}
+import news from './news';
 
 const reducer = combineReducers({
-    test,
+    news,
 });
 
 export default reducer;
