@@ -2,19 +2,19 @@ import { useDispatch } from "react-redux";
 
 import './Home.css';
 import LoginContainer from "../auth/LoginContainer"
-import { getLatestNews } from "../../redux/actions/actionCreator";
+import { getUserJwt } from "../../redux/actions/actionCreator";
 
 const Home = () => {
     const dispatch = useDispatch();
 
-    const handleNews = () => {
-        dispatch(getLatestNews());
+    const handleAuth = () => {
+        dispatch(getUserJwt());
     }
 
     return(
         <main>
             <LoginContainer />
-            <button onClick={handleNews}>GetNews</button>
+            <button onClick={handleAuth}>GetNews</button>
         </main>
     )
 }

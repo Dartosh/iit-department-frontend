@@ -1,13 +1,17 @@
 import {
-    GET_LATEST_NEWS,
-    SET_LATEST_NEWS,
+    SET_USER_JWT,
+    GET_USER_JWT,
 } from '../constants';
 
-export const getLatestNews = () => ({
-    type: GET_LATEST_NEWS,
-})
+export const getUserJwt = () => {
+    return({
+        type: GET_USER_JWT,
+    });
+};
 
-export const setLatestNews = (payload: []) => ({
-    type: SET_LATEST_NEWS,
-    payload,
-})
+export const setUserJwt = (payload: any) => {
+    return({
+        type: SET_USER_JWT,
+        payload,
+    });
+};
