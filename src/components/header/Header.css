@@ -1,5 +1,5 @@
 header {
-    background-color: #101d25;
+    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -17,15 +17,15 @@ h1 a {
     display: block;
     padding: 10px 20px;
     line-height: 60px;
-    color: #1a404f;
-    text-shadow: 2px 2px #76b995;
+    color: white;
+    /* text-shadow: 1px 1px white; */
     transition-duration: 0.2s;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 h1 a:hover {
-    color: #76b995;
-    text-shadow: 2px 2px #1a404f;
+    color: #007ec8;
+    text-shadow: 1px 1px white;
 }
 
 .header__auth-block {
