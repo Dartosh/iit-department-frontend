@@ -4,7 +4,7 @@ const initialState = {
     tokens: { },
 };
 
-const user = (state = initialState, action: any) => {
+const tokens = (state = initialState, action: any) => {
     const { type, payload } = action;
 
     switch (type) {
@@ -18,4 +18,4 @@ const user = (state = initialState, action: any) => {
     }
 };
 
-export default user;
+export default tokens;

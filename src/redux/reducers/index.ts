@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
 
-import user from "./user";
+import tokens from "./tokens";
+import posts from "./posts";
 
 const reducer = combineReducers({
-    user,
+    tokens,
+    posts,
 });
 
 export default reducer;
