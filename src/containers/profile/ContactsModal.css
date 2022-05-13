@@ -47,6 +47,7 @@
 }
 
 .contacts-window__header .btn {
+  background: none;
   width: 40px;
   height: 40px;
   margin: 25px 20px 0 0;

@@ -30,7 +30,8 @@
 }
 
 .profile__button__edit {
-  background-color: white;
+  background: none;
+  border: none;
   width: 65px;
   height: 65px;
   margin: 60px 60px 0 0;

@@ -8,6 +8,7 @@ import emailLogo from "../../assets/img/logo/email-logo.png"
 import phoneLogo from "../../assets/img/logo/mobile-logo.png"
 import telegramLogo from "../../assets/img/logo/telegram-logo.png"
 import githubLogo from "../../assets/img/logo/github-logo.png"
+import cross from "../../assets/img/logo/cross.png";
 
 
 type propsModalWindow = {
@@ -24,6 +25,7 @@ type propsModalWindow = {
 }
 
 const ContactsModal: React.FC<propsModalWindow> = (props) => {
+
     return(
         <>
             { props.isOpen &&
@@ -37,7 +39,7 @@ const ContactsModal: React.FC<propsModalWindow> = (props) => {
                             className='btn'
                             disabled={false}
                             active={false}
-                            children=""/>
+                            children={<img src={cross} alt="edit-button" />}/>
                       </div>
 
                       <div className="line"></div>
