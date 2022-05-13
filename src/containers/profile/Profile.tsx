@@ -26,20 +26,20 @@ class Profile extends Component<any, any> {
                     <div className="profileBlock__info">
                         <div className="profile__imageEdit">
                             <img src="../../assets/img/mock/profile_image.png" alt="Profile" className="profile__image"/>
-                            <ContactsContainer />
-                            {/* <button className="profile__button__edit">
+                            <button className="profile__button__edit">
                                 <img src="../../assets/img/mock/edit_button.png" alt="Edit button" className="profile__editImage"/>
-                            </button> */}
+                            </button>  
                         </div>
 
                         {fullName}
                         {group}
                         {location}
 
-                        <div className="profile__contactInfo"> 
-                            <button className="profile__Btn">
+                        <div className="profile__contactInfo">
+                            <ContactsContainer /> 
+                            {/* <button className="profile__Btn">
                                 Контактная информация
-                            </button>
+                            </button> */}
 
                             <button className="profile__Btn">
                                 Изменить информацию о себе

@@ -51,9 +51,7 @@ class ContactsContainer extends Component {
     render() {
         return(
             <div className="">
-                <button onClick={this.openModal} className="profile__button__edit">
-                  <img src="../../assets/img/mock/edit_button.png" alt="Edit button" className="profile__editImage"/>
-                </button>
+                <button onClick={this.openModal} className="profile__Btn">Контактная информация</button>
                 <ContactsModal fullName={this.state.fullName}
                             mail={this.state.mail}
                             phone={this.state.phone}
@@ -61,7 +59,7 @@ class ContactsContainer extends Component {
                             github={this.state.github}
                             isOpen={this.state.isOpen}
                             onClose={this.handleClose}
-                            onSubmit={this.handleLogin}
+                            onSubmit={this.handleLogin} 
                             handleLoginChange={this.handleInputLoginChange}
                             handlePasswordChange={this.handleInputPasswordChange}
                 />
