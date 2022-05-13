@@ -15,4 +15,18 @@ const getPostsPagination = async (): Promise<any> => {
     return await res.json();
 }
 
+const deletePostsPagination = async (): Promise<any> => {
+    const res = await fetch(
+        BACKEND_BASE_URL + 'api/v1/wall/1',
+        {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `JWT ${data}`,
+            },
+        }
+    );
+    return await res.json();
+}
+
 export default getPostsPagination;

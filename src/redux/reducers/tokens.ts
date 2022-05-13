@@ -11,7 +11,7 @@ const tokens = (state = initialState, action: any) => {
         case SET_USER_JWT:
             return {
                 ...state,
-                tokens: { ...state.tokens, ...payload },
+                tokens: { ...state.tokens, ...payload.results },
             }
         default:
             return state;
