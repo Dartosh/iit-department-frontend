@@ -68,7 +68,7 @@
 
 .contacts-window__main__item {
   width: 100%;
-  margin: 10px 0 0 20px;
+  margin: 15px 0 0 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -78,10 +78,6 @@
   width: 80px;
   height: 80px;
   background-color: white;
-  border-radius: 50%;
-  background-image: url('../../assets/img/logo/email-logo.png');
-  background-repeat:no-repeat;
-  background-position: center center;
 }
 
 .contacts-window__main__item__info {
@@ -93,6 +89,7 @@
 }
 
 .contacts-window__main__item__info p {
+  font-size: 18px;
   margin: 0;
 }
 

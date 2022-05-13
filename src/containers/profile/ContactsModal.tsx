@@ -4,6 +4,11 @@ import Portal from "../portal/Portal";
 import Button from "../../components/button/Button";
 import './ContactsModal.css';
 
+import emailLogo from "../../assets/img/logo/email-logo.png"
+import phoneLogo from "../../assets/img/logo/mobile-logo.png"
+import telegramLogo from "../../assets/img/logo/telegram-logo.png"
+import githubLogo from "../../assets/img/logo/github-logo.png"
+
 
 type propsModalWindow = {
     fullName: string,
@@ -43,7 +48,7 @@ const ContactsModal: React.FC<propsModalWindow> = (props) => {
                         </h6>
 
                         <div className="contacts-window__main__item">
-                          <img src="../../assets/img/logo/email-logo.png" alt="" />
+                          <img src={emailLogo} alt="" />
                           <div className="contacts-window__main__item__info">
                             <p className="item__info__top">
                               Электронная почта
@@ -55,7 +60,7 @@ const ContactsModal: React.FC<propsModalWindow> = (props) => {
                         </div>
 
                         <div className="contacts-window__main__item">
-                          <img src="../../assets/img/logo/mobile-logo.png" alt="" />
+                          <img src={phoneLogo} alt="" />
                           <div className="contacts-window__main__item__info">
                             <p>
                               Мобильный телефон
@@ -67,7 +72,7 @@ const ContactsModal: React.FC<propsModalWindow> = (props) => {
                         </div>
 
                         <div className="contacts-window__main__item">
-                          <img src="../../assets/img/logo/telegram-logo.png" alt="" />
+                          <img src={telegramLogo} alt="" />
                           <div className="contacts-window__main__item__info">
                             <p>
                               Telegram
@@ -79,7 +84,7 @@ const ContactsModal: React.FC<propsModalWindow> = (props) => {
                         </div>
 
                         <div className="contacts-window__main__item">
-                          <img src="../../assets/img/logo/github-logo.png" alt="" />
+                          <img src={githubLogo} alt="" />
                           <div className="contacts-window__main__item__info">
                             <p>
                               Github

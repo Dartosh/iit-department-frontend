@@ -2,6 +2,8 @@ import { Component } from "react";
 
 import './Profile.css';
 import ContactsContainer from "./ContactsContainer";
+import profile from "../../assets/img/mock/profile.png";
+import editBtn from "../../assets/img/mock/edit_button.png";
 
 const FULL_NAME = 'Иван Иванов'
 const GROUP_NUMBER = 123456
@@ -25,9 +27,9 @@ class Profile extends Component<any, any> {
                 <div className="profile__container">
                     <div className="profileBlock__info">
                         <div className="profile__imageEdit">
-                            <img src="../../assets/img/mock/profile_image.png" alt="Profile" className="profile__image"/>
+                            <img src={profile} alt="Profile" className="profile__image"/>
                             <button className="profile__button__edit">
-                                <img src="../../assets/img/mock/edit_button.png" alt="Edit button" className="profile__editImage"/>
+                                <img src={editBtn} alt="Edit button" className="profile__editImage"/>
                             </button>  
                         </div>
 
@@ -37,7 +39,7 @@ class Profile extends Component<any, any> {
 
                         <div className="profile__contactInfo">
                             <ContactsContainer /> 
-                            {/* <button className="profile__Btn">
+                            {/* <button className="profile__Btn"> 
                                 Контактная информация
                             </button> */}
 
