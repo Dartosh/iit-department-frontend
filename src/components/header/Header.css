@@ -1,9 +1,8 @@
 header {
   background-color: white;
   display: flex;
-  justify-content: space-between;
   width: 100%;
-  min-height: 50px;
+  height: 60px;
   padding: 0 230px;
   /* border-radius: 0 0 10px 10px; */
   /* font-family: 'Ubuntu', serif; */
@@ -11,14 +10,15 @@ header {
 }
 
 h1 {
-  margin: 0;
+  margin: 0 95px 0 0;
   line-height: 60px;
 }
 
 h1 a {
   display: block;
   line-height: 60px;
-  color: black;
+  font-size: 52px;
+  color: #4562C9;
   /* text-shadow: 1px 1px white; */
   transition-duration: 0.2s;
   /* font-style: italic; */
