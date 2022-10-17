@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
 import { Provider } from 'react-redux';
 
 import reportWebVitals from './reportWebVitals';
@@ -15,9 +14,16 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <Provider store={ store }>
-
-  </Provider>
+  <BrowserRouter>
+              <App>
+                  <Routes>
+                      <Route path='/' element={<Auth />}/>
+                      <Route path='/library' element={<Library />}/>
+                      <Route path='/posts' element={<Posts />}/>
+                      <Route path='/profile' element={<Profile />}/>
+                  </Routes>
+              </App>
+  </BrowserRouter>
 );
 
 reportWebVitals();
