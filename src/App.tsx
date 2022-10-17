@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-import FeedsPage from './containers/feeds/feeds-page';
-import ProfilePage from './containers/profile/profile-page';
-import AuthPage from './containers/auth/auth-page';
+import './App.css';
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
-function App() {
-  return (
-    <div className="App">
-      <AuthPage />
-      <ProfilePage />
-      <FeedsPage />
-    </div>
-  );
+interface AppProps {
+  children: any;
+}
+
+const App: React.FC<AppProps> = ( { children } ) => {
+    return (
+        <Fragment>
+            <div className="wrapper">
+                <Header />
+                {children}
+                <Footer />
+            </div>
+        </Fragment>
+    );
 }
 
 export default App;
