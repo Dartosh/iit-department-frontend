@@ -1,0 +1,99 @@
+.contacts-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.contacts-background__contacts-window {
+  display: flex;
+  flex-wrap: wrap;
+  width: 550px; 
+  border-radius: 10px;
+
+  background: white;
+
+  font-family: 'Ubuntu', serif;
+  font-weight: bold;
+  font-style: normal; 
+}
+
+.contacts-background__contacts-window .line {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+
+.contacts-window__header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.contacts-window__header p {
+  margin: 20px 0 0 20px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.contacts-window__header .btn {
+  background: none;
+  width: 40px;
+  height: 40px;
+  margin: 25px 20px 0 0;
+  font-size: 40px;
+}
+
+.contacts-window__main {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-window__main h6 {
+  margin: 20px 0 0 20px;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.contacts-window__main__item {
+  width: 100%;
+  margin: 15px 0 0 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.contacts-window__main__item img {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+}
+
+.contacts-window__main__item__info {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.contacts-window__main__item__info p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.contacts-window__main__item__info p:last-child {
+  color: #1877F2;
+}

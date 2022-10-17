@@ -1,0 +1,130 @@
+.profile__container {
+  margin-top: 30px;
+  width: 100%;
+  color: black;
+  font-family: 'Ubuntu';
+}
+
+.profileBlock__info {
+  width: 100%;
+  margin-bottom: 15px;
+  min-height: 400px;
+  background: linear-gradient(to bottom, #969090 45%, #E5E6E8 0%);
+  border-radius: 10px 10px 0 0;
+}
+
+.profile__imageEdit {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.profile__image {
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  margin: 60px 0 0 60px;
+  border-radius: 50%;
+}
+
+.profile__button__edit {
+  background: none;
+  border: none;
+  width: 65px;
+  height: 65px;
+  margin: 60px 60px 0 0;
+  border-radius: 50%;
+}
+
+.profile__button__edit:hover {
+  cursor: pointer;
+}
+
+.profileBlock__info h3 {
+  text-align: left;
+  font-size: 42px;
+  margin: 32px 0 0 60px;
+}
+
+.profileBlock__info p {
+  text-align: left;
+  font-size: 25px;
+  margin: 0 0 0 60px;
+}
+
+.profile__contactInfo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.profile__Btn:first-child {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.profile__Btn {
+  height: 45px;
+  padding: 2px 10px 2px 10px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  background: none;
+  color: black;
+  border: 3px solid #1877F2;
+  border-radius: 15px;
+
+  font-family: 'Ubuntu';
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 29px;
+
+  transition-duration: 0.5s;
+}
+
+.profile__Btn:hover {
+  cursor: pointer;
+  background-color: #007ec8;
+}
+
+.profileBlock__actions {
+  width: 100%;
+  margin-bottom: 30px;
+  min-height: 150px;
+  background-color: #E5E6E8;
+  border-radius: 0 0 10px 10px;
+}
+
+.profile__actionsHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.profile__actionsHeader h4 {
+  margin: 40px 0 0 60px;
+  font-size: 42px;
+}
+
+.profile__actionsHeader button {
+  margin: 40px 60px 0 0;
+  font-size: 25px;
+}
+
+.profileBlock__actions h5 {
+  margin: 45px 0 0 60px;
+  font-size: 30px;
+}
+
+.profileBlock__actions p {
+  margin: 10px 0 0 60px;
+  font-size: 24px;
+}
+
+.profileBlock__actions #posts_container {
+  margin: 30px 60px 60px 60px;
+  min-height: 300px;
+}

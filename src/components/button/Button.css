@@ -1,0 +1,34 @@
+.btn {
+  font-family: 'Ubuntu', serif;
+  font-weight: bold;
+  font-style: normal;
+  color: white;
+
+  border-style: none;
+  border-radius: 5px;
+  height: 30px;
+  width: 60px;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  /* box-shadow: 1px 1px white; */
+  /* outline: #373737 solid 2px; */
+
+  transition-duration: 0.2s;
+}
+
+.btn:active {
+  box-shadow: none; 
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+.header__auth-block .btn {
+  margin-right: 20px;
+}
+
+
+form .btn{
+  width: 100px;
+  margin: 20px calc(50% - 50px) 0 calc(50% - 50px);
+}
