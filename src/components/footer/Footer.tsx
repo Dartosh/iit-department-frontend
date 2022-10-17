@@ -1,18 +1,16 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React from 'react'
 
-import './Footer.css';
-import Nav from "../nav/Nav";
+import './Footer.css'
 
 const Footer: React.FC = () => {
-    return(
-        <footer>
-            <h2>
-                <Link to='/'>IIT Department</Link>
-            </h2>
-            <Nav />
-        </footer>
-    )
+  return (
+    <footer>
+      <p>УО &quot;Белорусский государственный университет информатики и радиоэлектроники&quot;</p>
+      <p>Техподдержка: iitdev@gmail.com</p>
+      <div className="footer_links"></div>
+      <p>© 2009-2022 ОИТ ЦИИР БГУИР. Все права защищены.</p>
+    </footer>
+  )
 }
 
-export default Footer;
+export default Footer

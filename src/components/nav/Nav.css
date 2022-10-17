@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul {
+  margin: 0;
+  display: flex;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 10px 20px;
+  line-height: 60px;
+  color: black;
+}
+
+nav li {
+  list-style: none;
+  transition-duration: 0.4s;
+}
+
+nav li:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
