@@ -1,5 +1,6 @@
-import React from "react";
-import classNames from "classnames";
+import React from 'react';
+
+import classNames from 'classnames';
 
 import './Button.css';
 
@@ -11,13 +12,10 @@ const Button: React.FC<buttonProps> = ({
     disabled,
     active
 }) => {
-
     const classes: string = classNames(
         className,
         { active },
     )
-
-
 
     return(
         <button
