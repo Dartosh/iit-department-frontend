@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { TokensStateInterface } from '../../models/interfaces/state/tokens-state.interface';
+import * as jwt from 'jwt-decode';
+
+import { TokensStateInterface } from '../../models/interfaces/state/TokensStateInterface';
 import { TokensInterface } from '../../models/interfaces/tokens.interface';
 
 const initialState: TokensStateInterface = {
@@ -10,7 +12,7 @@ const initialState: TokensStateInterface = {
 }
 
 export const tokensSlice = createSlice({
-  name: 'application',
+  name: 'jwt/create',
   initialState,
   reducers: {
     fetching(state) {
@@ -20,6 +22,8 @@ export const tokensSlice = createSlice({
       state.isLoading = false;
 
       state.tokens = action.payload;
+
+      state.error = '';
     },
     fetchErrors(state, action: PayloadAction<Error>) {
       state.isLoading = false;
