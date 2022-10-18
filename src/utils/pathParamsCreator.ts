@@ -1,0 +1,1 @@
+export const getProfileByIdPath = (id: number): string => `api/v1/profile/${id}`;
