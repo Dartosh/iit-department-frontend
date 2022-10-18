@@ -73,3 +73,7 @@
 .register__btn {
   background-color: #7FC67D;
 }
+
+.auth__form__error-message {
+  color: rgb(207, 61, 61);
+}
