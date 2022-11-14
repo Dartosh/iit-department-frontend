@@ -6,7 +6,26 @@ class Library extends Component<any, any> {
     render() {
         return(
             <main>
-                <h3>Library</h3>
+                <div className="library__wrapper">
+                    <h2>Library</h2>
+                    <p>Documents</p>
+                    <div className="library_documentsBlock">
+                        <button className="library__checkboxBtn selected">All</button>
+                        <button className="library__checkboxBtn">All</button>
+                        <button className="library__checkboxBtn">All</button>
+                        <div className="library__documentsBlock-content">
+                            <div className="library__item"></div>
+                            <div className="library__item"></div>
+                            <div className="library__item"></div>
+                            <div className="library__item"></div>
+                            <div className="library__item"></div>
+                            <div className="library__item"></div>
+                            <div className="library__item"></div>
+                            <div className="library__item"></div>
+                        </div>
+                    </div>
+                </div>
+                
             </main>
         )
     }
