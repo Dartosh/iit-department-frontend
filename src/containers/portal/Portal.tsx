@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 type PortalProps = {
     children: React.ReactNode;
 }
+
 class Portal extends Component<PortalProps> {
     private el: HTMLDivElement = document.createElement('div')
 
