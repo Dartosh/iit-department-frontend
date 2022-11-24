@@ -1,6 +1,6 @@
 import jwt from 'jwt-decode';
 
-import http from '../../http';
+import http from '../../services/http';
 import { AuthMethodsEnum } from '../../models/enums/authMethodsEnum';
 import { TokenPayloadInterface } from '../../models/interfaces/tokenPayloadInterface';
 import { TokensInterface } from '../../models/interfaces/tokens.interface';
