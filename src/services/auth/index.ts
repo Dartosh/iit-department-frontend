@@ -1,5 +1,9 @@
+import jwt from 'jwt-decode';
+
 import { AuthMethodsEnum } from "../../models/enums/authMethodsEnum";
+import { TokenPayloadInterface } from '../../models/interfaces/tokenPayloadInterface';
 import { TokensInterface } from "../../models/interfaces/tokens.interface";
+import { UserInterface } from '../../models/interfaces/user.interface';
 import { AuthBodyBuilder } from "../../redux/classes/AuthBodyBuilder";
 import debug from "../debug";
 import httpsService from "../http";
@@ -15,44 +19,49 @@ class AuthService {
 
   private readonly API_ENDPOINTS = {
     refresh: 'api/v1/auth/jwt/refresh',
+    
   }
 
-  public async authUser(username: string, password: string) {
+  public getUserIdFromToken(token: string) {
+    const decodedTokenPayload = jwt(token) as TokenPayloadInterface;
+
+    return decodedTokenPayload.user_id;
+  }
+
+  public async authUser(username: string, password: string): Promise<TokensInterface> {
     try {
         const authBody = new AuthBodyBuilder(username, password);
 
         const response = await httpsService.post<TokensInterface>(AuthMethodsEnum.create, authBody);
 
-        debug.success('Authentication request result', response.data);
+        debug.success('Authentication request result: \n', response.data);
   
         if (response.status !== 200) {
           return Promise.reject(`Incorrect status ${response.status}`);
         }
 
-        if (response.data) {
-          this.setAuthTokens(response.data);
+        this.setAuthTokens(response.data);
           
-          return response.data;
-        }
+        return response.data;
       } catch (error: any) {
         debug.error(
           `Failed with POST request by path: ${URL}${AuthMethodsEnum.create}`,
           error,
         );
 
-        throw await error.response?.json();
+        throw new Error(error?.message);
       }
   }
 
-  public async getAuthToken() {
+  public getAuthToken() {
     try {
-        const token = window.localStorage.getItem(this.LOCAL_STORAGE_KEYS.token);
+      const token = window.localStorage.getItem(this.LOCAL_STORAGE_KEYS.token);
 
-        if (token) {
-          return token;
-        }
+      if (token) {
+        return token;
+      }
 
-        return Promise.reject(false);
+      return '';
     } catch (error) {
         throw error;
     }

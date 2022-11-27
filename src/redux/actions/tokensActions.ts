@@ -11,6 +11,8 @@ import { AuthBodyBuilder } from '../classes/AuthBodyBuilder';
 import { tokensSlice } from '../slices/token-slice';
 import { userSlice } from '../slices/user-slice';
 import { AppDispatch } from '../store';
+import authService from '../../services/auth';
+import usersService from '../../services/users';
 
 export const fetchTokens = (username: string, password: string) => {
   return async (dispatch: AppDispatch) => {
@@ -19,19 +21,19 @@ export const fetchTokens = (username: string, password: string) => {
     try {
       dispatch(tokensSlice.actions.fetching());
 
-      const tokensResponse = await http.post<TokensInterface>(AuthMethodsEnum.create, authBody);
+      const tokensResponse = await authService.authUser(username, password);
 
-      dispatch(tokensSlice.actions.fetchSuccess(tokensResponse.data));
+      dispatch(tokensSlice.actions.fetchSuccess(tokensResponse));
 
-      const decodedTokenPayload = jwt(tokensResponse.data.access) as TokenPayloadInterface;
+      const userId = authService.getUserIdFromToken(tokensResponse.access);
 
-      const userId: number = decodedTokenPayload.user_id;
+      console.log(userId);
 
-      const userResponse = await http.get<UserInterface>(getProfileByIdPath(userId), {
-        headers: getAuthHeader(tokensResponse.data.access),
-      })
+      dispatch(userSlice.actions.fetching());
 
-      dispatch(userSlice.actions.fetchSuccess(userResponse.data));
+      const userProfile = await usersService.getUserProfileById(userId);
+
+      dispatch(userSlice.actions.fetchSuccess(userProfile));
     } catch (error) {
       dispatch(tokensSlice.actions.fetchErrors(error as Error));
     }
