@@ -7,22 +7,22 @@ const httpsService = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
 })
 
-httpsService.interceptors.request.use(async (config) => {
-    const token = await authService.getAuthToken();
+httpsService.interceptors.request.use(
+  async (config) => {
+    const token = authService.getAuthToken();
 
-    if (token) {
+    if (token.length) {
       config.headers = {
         'Content-Type': 'application/json',
         'Authorization': `JWT ${token}`,
-      }
+      };
     }
-
-    console.log(token);
 
     return config;
   }, 
   (error) => {
-    debug.error('Failed to set auth token beforeRequest', error);
+    debug.error('Failed to set auth token beforeRequest:\n', error);
+
     return Promise.reject(error);
   },
 );
@@ -32,6 +32,8 @@ httpsService.interceptors.response.use(
     return response;
   },
   async (error) => {
+    console.log(error);
+
     const originalRequest = error.config;
 
     if (error?.response?.status === 401 && !originalRequest._retry) {
