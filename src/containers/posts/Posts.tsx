@@ -42,6 +42,9 @@ export const Posts = () => {
                 <a href="" className="posts__userInfo-libraryLink">Моя библиотека</a>
             </div>
             <div className="posts__postsInfo">
+                <div className="posts__postsInfo-createPost-block">
+                    
+                </div>
 
             </div>
         </div>
