@@ -1,6 +1,7 @@
 import { Component } from "react";
 
 import './Library.css';
+import LibraryItem from '../../components/library-item/LibraryItem';
 
 class Library extends Component<any, any> {
     render() {
@@ -14,14 +15,20 @@ class Library extends Component<any, any> {
                         <button className="library__checkboxBtn">All</button>
                         <button className="library__checkboxBtn">All</button>
                         <div className="library__documentsBlock-content">
-                            <div className="library__item"></div>
-                            <div className="library__item"></div>
-                            <div className="library__item"></div>
-                            <div className="library__item"></div>
-                            <div className="library__item"></div>
-                            <div className="library__item"></div>
-                            <div className="library__item"></div>
-                            <div className="library__item"></div>
+                            <LibraryItem />
+                            <LibraryItem />
+                            <LibraryItem />
+                            <LibraryItem />
+                            <LibraryItem />
+                            <LibraryItem />
+                            <LibraryItem />
+                            <LibraryItem />
+                            <LibraryItem />
+                            <LibraryItem />
+                            <LibraryItem />
+                            <LibraryItem />
+                            <LibraryItem />
+                            <LibraryItem />
                         </div>
                     </div>
                 </div>
