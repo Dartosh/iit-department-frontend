@@ -1,0 +1,73 @@
+.posts__container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 25px 0 25px 0;
+}
+
+.posts__userInfo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.posts__userInfo-image {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  justify-content: center;
+  background: linear-gradient(to bottom, #D9D9D9 60%, #FFF 40%);
+  border-radius: 10px;
+}
+
+.posts__user-image {
+  margin-top: 25px;
+  height: 70px;
+  width: 70px;
+}
+
+.posts__userInfo-fullName {
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.posts__userInfo-technology {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 11px;
+  color: #999;
+}
+
+.posts__userInfo .br {
+  height: 0.5px;
+  width: 100%;
+  background-color: #D9D9D9;
+  margin-top: 20px;
+}
+
+.posts__userInfo-statistic {
+  width: 100%;
+  text-align: left;
+  padding-left: 5px;
+  font-size: 12px;
+  line-height: 14px;
+  margin-bottom: 5px;
+}
+
+.posts__userInfo-viewsStatistic {
+  margin-top: 15px;
+}
+
+.posts__userInfo-libraryLink {
+  margin: 5px 0 5px 0;
+  font-size: 12px;
+  line-height: 14px;
+  color: black;
+}
