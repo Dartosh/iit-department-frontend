@@ -1,4 +1,4 @@
-import http from '../../http';
+import http from '../../services/http';
 import { AuthMethodsEnum } from '../../models/enums/authMethodsEnum';
 import { tokensSlice } from '../slices/token-slice';
 import { AppDispatch } from '../store';
