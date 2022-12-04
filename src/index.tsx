@@ -10,7 +10,7 @@ import App from './App';
 import Library from './containers/library/Library';
 import Auth from './containers/auth/Auth';
 import { Profile } from './containers/profile/Profile';
-import Posts from './containers/posts/Posts';
+import { Posts } from './containers/posts/Posts';
 import { setupStore } from './redux/store';
 
 const store = setupStore();

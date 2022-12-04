@@ -1,0 +1,48 @@
+.library__wrapper h2 {
+  margin-top: 25px;
+  font-size: 28px;
+}
+
+.library__wrapper p {
+  font-weight: 500;
+  margin-top: 25px;
+  font-size: 20px;
+  color: #969090;
+}
+
+.library_documentsBlock {
+  margin-top: 20px;
+}
+
+.library_documentsBlock .library__checkboxBtn {
+  width: 150px;
+  height: 36px;
+  margin: 0;
+  background-color: white;
+  color: black;
+  margin-right: 30px;
+  border: 1px solid black;
+  border-radius: 10px;
+  transition-duration: 1s;
+}
+
+.library_documentsBlock .selected {
+  background-color: #1877F2;
+  color: white;
+}
+
+.library_documentsBlock .library__checkboxBtn:hover {
+  background-color: #93c2ff;
+  cursor: pointer;
+}
+
+.library_documentsBlock .selected:hover {
+  cursor: default;
+}
+
+.library__documentsBlock-content {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
