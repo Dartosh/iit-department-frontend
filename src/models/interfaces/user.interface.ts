@@ -21,7 +21,7 @@ export interface UserInterface {
 
   github: string | null;
 
-  birthdate: Date | null;
+  birthday: Date | null;
 
   gender: string | null;
 
