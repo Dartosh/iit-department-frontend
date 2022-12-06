@@ -12,6 +12,7 @@ import Auth from './containers/auth/Auth';
 import { Profile } from './containers/profile/Profile';
 import { Posts } from './containers/posts/Posts';
 import { setupStore } from './redux/store';
+import { UpdateProfile } from './containers/update-profile/UpdateProfile';
 
 const store = setupStore();
 
@@ -28,6 +29,9 @@ root.render(
               <Route path='/library' element={<Library />}/>
               <Route path='/posts' element={<Posts />}/>
               <Route path='/profile' element={<Profile />}/>
+              <Route path='/login' element={<Auth />}/>
+              <Route path='/register' element={<Auth />}/>
+              <Route path='/profile/update' element={<UpdateProfile />}/>
           </Routes>
       </App>
     </BrowserRouter>

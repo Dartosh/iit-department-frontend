@@ -1,14 +1,16 @@
 import { Component, useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router";
 
 import './Profile.css';
 import ContactsContainer from "./ContactsContainer";
 import profile from "../../assets/img/mock/profile.png";
 import editBtn from "../../assets/img/mock/edit_button.png";
 import { UserInterface } from "../../models/interfaces/user.interface";
-import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 
 export const Profile = () => {
+  const navigate = useNavigate();
   // Пользователь подтягивается из стора, все поля для отрисовки брать отсюда
   const { user } = useSelector((store: RootState) => store.user);
   // Моковая группа, пока на бэке не добавят поле
@@ -37,7 +39,7 @@ export const Profile = () => {
                         Контактная информация
                     </button> */}
 
-                    <button className="profile__Btn">
+                    <button className="profile__Btn" onClick={() => navigate('/profile/update')}>
                         Изменить информацию о себе
                     </button>
 
