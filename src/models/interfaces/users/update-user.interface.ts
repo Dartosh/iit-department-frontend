@@ -21,5 +21,5 @@ export interface UpdateUserInterface {
   
     gender?: string | null;
   
-    technology: string[] | null;
+    technology: number[] | null;
   }

@@ -2,7 +2,7 @@ import { UpdateUserInterface } from "../../../models/interfaces/users/update-use
 
 class UpdateUserBuilder implements UpdateUserInterface{
     public readonly phone: string;
-    public readonly technology: string[];
+    public readonly technology: number[];
     public readonly username: string;
 
     public first_name?: string;
@@ -15,7 +15,7 @@ class UpdateUserBuilder implements UpdateUserInterface{
     public birthday?: Date | null;
     public gender?: string | null;
 
-    constructor(phone: string, technology: string[], username: string) {
+    constructor(phone: string, technology: number[], username: string) {
         this.phone = phone;
         this.technology = technology;
         this.username = username;
