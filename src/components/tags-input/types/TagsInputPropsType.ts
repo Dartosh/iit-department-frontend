@@ -1,11 +1,14 @@
 type TagType = {
-  key: string | number;
+  id: number;
+
+  type?: string;
   
-  value: string;
+  name: string;
 }
 
 export type TagsInputPropsType = {
-  tags: string[],
+  tags: TagType[],
   // TODO type tagsHandler
   tagsHandler: (...e: any) => any,
+  onButtonClick: () => any,
 }

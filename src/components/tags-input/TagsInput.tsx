@@ -1,8 +1,9 @@
 import React from "react"
 
+import { TagsInputPropsType } from "./types/TagsInputPropsType"
+
 import './TagsInput.css'
 
-import { TagsInputPropsType } from "./types/TagsInputPropsType"
 
 function TagsInput(props: TagsInputPropsType){
     const handleKeyDown = (e: any) => {
@@ -34,18 +35,21 @@ function TagsInput(props: TagsInputPropsType){
         <div className="tags-input-container">
             {
                 props.tags.map((tag, index) => (
-                    <div className="tag-item" key={`${tag}-${index}`}>
-                        <span className="text">{tag}</span>
+                    <div className="tag-item" key={`${tag.name}-${index}`}>
+                        <span className="text">{tag.name}</span>
                         <span onClick={() => removeTag(index)} className="close">&times;</span>
                     </div>
                 ))
             }
-            <input
+            <button onClick={(e) => { e.preventDefault(); props.onButtonClick(); }}>
+                +
+            </button>
+            {/* <input
                 type="text"
                 className="tags-input"
                 placeholder="Технология..."
                 onKeyDown={handleKeyDown}
-            />
+            /> */}
         </div>
     )
 }
