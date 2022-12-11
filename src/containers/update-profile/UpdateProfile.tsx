@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import TagsInput from "../../components/tags-input/TagsInput";
+import TechnologiesModal from "../../components/technologies-modal/TechnologiesModal";
 import { useAppDipatch } from "../../hooks/redux";
 import { UpdateUserInterface } from "../../models/interfaces/users/update-user.interface";
+import { TechnologyType } from "../../models/types/TechnologyType";
 import { fetchUpdateProfile } from "../../redux/actions/userActions";
-
 import { RootState } from "../../redux/store";
+import technologiesService from "../../services/technologies";
+import { mockAllTechnologies, mockUserTechnologies } from "./constants/mock-technologies";
 
 import './UpdateProfile.css';
 
 export const UpdateProfile = () => {
   const dipatch = useAppDipatch();
+  // Кнопки добавление аватара и обложки просто замокай
   const { user } = useSelector((store: RootState) => store.user);
 
   const [firstName, setFirstName] = useState(user?.first_name || '');
@@ -22,7 +27,37 @@ export const UpdateProfile = () => {
   // Пока данное поле на бэкенде отсутствует
   // const [email, setEmail] = useState(user?.email || '');
   const [github, setGithub] = useState(user?.github || '');
-  const [technologies, setTechnologies] = useState(user?.technology || []);
+  const [userTechnologiesIds, setTechnologiesIds] = useState(user?.technology || []);
+  const [userTechnologies, setUserTechnologies] = useState(new Array<TechnologyType>);
+
+  const [allTechnologies, setAllTechnologies] = useState(new Array<TechnologyType>);
+
+  const [isTechModalOpen, setIsTechModalOpen] = useState(false);
+
+  useEffect(() => {
+    userTechnologiesIds.forEach(async (techId) => {
+      const technology = await technologiesService.getTechnologiesById(techId);
+
+      setUserTechnologies((oldState) => {
+        return [...oldState, technology as TechnologyType]
+      })
+    });
+  }, []);
+
+  useEffect(() => {
+    const technologiesSolver = async () => {
+      const technologiesList =
+        await technologiesService.getTechnologiesList();
+
+      setAllTechnologies(technologiesList as TechnologyType[]);
+    };
+
+    technologiesSolver();
+  }, [isTechModalOpen]);
+
+  const openOrCloseTechModal = () => {
+    setIsTechModalOpen(!isTechModalOpen);
+  };
 
   const submitUpdateProfile = async (e: any) => {
     e.preventDefault();
@@ -30,7 +65,7 @@ export const UpdateProfile = () => {
     const bodyToSend: UpdateUserInterface = {
       phone: phoneNumber,
       username: gradebookNumber,
-      technology: technologies,
+      technology: userTechnologies.map((tech) => tech.id),
     };
 
     // TODO Да, знаю, трэш, потом переделаю
@@ -59,9 +94,27 @@ export const UpdateProfile = () => {
     dipatch(fetchUpdateProfile(user?.id!, bodyToSend));
   }
 
+  const handleChangeTechnology = (id: number, isSelected: boolean) => {
+    if (isSelected) {
+      const technology = allTechnologies.find((tech) => tech.id === id);
+
+      if (technology) {
+        setUserTechnologies((oldState) => {
+          return [...oldState, technology];
+        });
+      }
+
+      return;
+    }
+
+    setUserTechnologies((oldState) => {
+      return oldState.filter((tech) => tech.id !== id);
+    });
+  }
+
   return(
     <main>
-      <form onSubmit={submitUpdateProfile}>
+      <form>
         <label>First name: </label>
         <input
           type="text"
@@ -119,10 +172,21 @@ export const UpdateProfile = () => {
           }
         />
         <TagsInput
-          tagsHandler={setTechnologies}
-          tags={technologies}
+          tagsHandler={setUserTechnologies}
+          tags={userTechnologies}
+          onButtonClick={openOrCloseTechModal}
         />
-        <button type="submit">Save</button>
+        {
+          isTechModalOpen &&
+          <TechnologiesModal
+            onCloseModal={openOrCloseTechModal}
+            onChangeTech={handleChangeTechnology}
+            onSubmitForm={() => {}}
+            userTechnologies={userTechnologies as TechnologyType[]}
+            allTechnologies={allTechnologies as TechnologyType[]}
+          />
+        }
+        <button type="submit" onClick={submitUpdateProfile}>Save</button>
       </form>
     </main>
   );

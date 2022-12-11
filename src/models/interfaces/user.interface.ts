@@ -25,7 +25,7 @@ export interface UserInterface {
 
   gender: string | null;
 
-  technology: string[] | null;
+  technology: number[] | null;
 
   profile_views: number | null;
 
