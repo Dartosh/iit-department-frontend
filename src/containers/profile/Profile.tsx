@@ -32,6 +32,9 @@ export const Profile = () => {
         <div className="profile__container">
             <div className="profileBlock__header">
                 <img src={avatar} alt="User profile image" className="profileBlock__header-img" />
+                <button className="profile__button__edit">
+                    <img src={editBtn} alt="Edit button" className="profile__editImage"/>
+                </button>
             </div>
             <div className="profileBlock__info">
                 <div className="profileBlock__info-posts">

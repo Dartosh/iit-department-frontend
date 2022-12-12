@@ -9,6 +9,10 @@
 }
 
 .profileBlock__header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   width: 100%;
   height: 265px;
   background-image: url('../../assets/img/background/background-profile.png');
@@ -19,6 +23,25 @@
   width: 235px;
   height: 235px;
   margin: 15px 0 0 25px;
+}
+
+.profile__button__edit {
+  background: none;
+  padding: 0;
+  border: none;
+  width: 65px;
+  height: 65px;
+  margin: 25px 30px 0 0;
+  border-radius: 50%;
+}
+
+.profile__button__edit:hover {
+  cursor: pointer;
+}
+
+.profile__button__edit .profile__editImage {
+  width: 65px;
+  height: 65px;
 }
 
 .profileBlock__info {
