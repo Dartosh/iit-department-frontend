@@ -8,6 +8,11 @@ import avatar from "../../assets/img/mock/avatar.png";
 import emailLogo from "../../assets/img/logo/email-logo.png"
 import phoneLogo from "../../assets/img/logo/mobile-logo.png"
 import githubLogo from "../../assets/img/logo/github-logo.png"
+import pythonLogo from "../../assets/img/logo/python.png"
+import dockerLogo from "../../assets/img/logo/docker.png"
+import jsLogo from "../../assets/img/logo/javascript.png"
+import msqlLogo from "../../assets/img/logo/mySQL.png"
+import mongoLogo from "../../assets/img/logo/mongoDB.png"
 import editBtn from "../../assets/img/mock/edit_button.png";
 import { UserInterface } from "../../models/interfaces/user.interface";
 import { RootState } from "../../redux/store";
@@ -95,7 +100,14 @@ export const Profile = () => {
                     </div>
 
                     <div className="profileBlock__info-stats-technologies">
-
+                        <p>Technologies</p>
+                        <div className="profileBlock__info-stats-technologies-stack">
+                            <img src={pythonLogo} alt="" />
+                            <img src={dockerLogo} alt="" />
+                            <img src={jsLogo} alt="" />
+                            <img src={msqlLogo} alt="" />
+                            <img src={mongoLogo} alt="" />
+                        </div>
                     </div>
 
                     <div className="profileBlock__info-stats-followers">
