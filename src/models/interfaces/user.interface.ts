@@ -15,6 +15,8 @@ export interface UserInterface {
 
   phone: string | null;
 
+  email: string | null;
+
   avatar: string | null;
 
   bio: string | null;

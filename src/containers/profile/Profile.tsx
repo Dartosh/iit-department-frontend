@@ -5,6 +5,9 @@ import { useNavigate } from "react-router";
 import './Profile.css';
 import ContactsContainer from "./ContactsContainer";
 import avatar from "../../assets/img/mock/avatar.png";
+import emailLogo from "../../assets/img/logo/email-logo.png"
+import phoneLogo from "../../assets/img/logo/mobile-logo.png"
+import githubLogo from "../../assets/img/logo/github-logo.png"
 import editBtn from "../../assets/img/mock/edit_button.png";
 import { UserInterface } from "../../models/interfaces/user.interface";
 import { RootState } from "../../redux/store";
@@ -75,7 +78,33 @@ export const Profile = () => {
                     </div>
                 </div>
                 <div className="profileBlock__info-stats">
+                    <div className="profileBlock__info-stats-contacts">
+                        <p>Contact information</p>
+                        <div className="profileBlock__info-stats-contacts_email profile-contact">
+                            <img src={emailLogo} alt="" />
+                            <p>{user?.email || 'memes-kekes@sobaka.ya'} &nbsp;</p>
+                        </div>
+                        <div className="profileBlock__info-stats-contacts_document profile-contact">
+                            <img src={phoneLogo} alt="" />
+                            <p>{user?.phone || '+88005553535'} &nbsp;</p>
+                        </div>
+                        <div className="profileBlock__info-stats-contacts_github profile-contact">
+                            <img src={githubLogo} alt="" />
+                            <p>{user?.github || '@sobaka'} &nbsp;</p>
+                        </div>
+                    </div>
 
+                    <div className="profileBlock__info-stats-technologies">
+
+                    </div>
+
+                    <div className="profileBlock__info-stats-followers">
+
+                    </div>
+
+                    <div className="profileBlock__info-stats-following">
+
+                    </div>
                 </div>
             </div>
         </div>
