@@ -200,6 +200,90 @@
   height: 50px;
 }
 
+.profileBlock__info-stats-followers {
+  margin-top: 20px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.profileBlock__info-stats-followers p {
+  color: #1877F2;
+  margin: 15px 0 0 30px;
+  font-size: 22px;
+}
+
+.profileBlock__info-stats-followers-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-right: 20px;
+}
+
+.profileBlock__follower-user {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 15px 0 0 30px;
+}
+
+.profileBlock__follower-user img {
+  width: 40px;
+  height: 40px;
+}
+
+.profileBlock__follower-user p {
+  color: black;
+  margin: 0;
+  font-size: 14px;
+}
+
+.profileBlock__info-stats-following {
+  margin: 20px 0;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.profileBlock__info-stats-following p {
+  color: #1877F2;
+  margin: 15px 0 0 30px;
+  font-size: 22px;
+}
+
+.profileBlock__info-stats-followings-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-right: 20px;
+}
+
+.profileBlock__following-user {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 15px 0 0 30px;
+}
+
+.profileBlock__following-user img {
+  width: 40px;
+  height: 40px;
+}
+
+.profileBlock__following-user p {
+  color: black;
+  margin: 0;
+  font-size: 14px;
+}
+
 /* .profileBlock__info {
   width: 100%;
   margin-bottom: 15px;

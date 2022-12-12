@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 
 import './Profile.css';
 import ContactsContainer from "./ContactsContainer";
+import userLogo from "../../assets/img/mock/profile.png";
 import avatar from "../../assets/img/mock/avatar.png";
 import emailLogo from "../../assets/img/logo/email-logo.png"
 import phoneLogo from "../../assets/img/logo/mobile-logo.png"
@@ -81,7 +82,36 @@ export const Profile = () => {
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod magnam minus voluptatibus voluptatem cumque similique nobis quibusdam nihil veritatis! Ab recusandae nesciunt doloremque veritatis harum minima ea numquam iure sed.
                         </div>
                     </div>
+
+                    <div className="profileBlock__posts-item">
+                        <div className="profileBlock__posts-item-header">
+                            <img src={avatar} alt="User profile image" className="profileBlock__posts-item-img" />
+                            <div className="profileBlock__posts-item-header-userInfo">
+                                <p>{ (user?.first_name && user?.middle_name) ? user?.first_name + ' ' + user?.middle_name : 'Имя не указано' }</p>
+                                <p>Student</p>
+                                <p>1 day ago</p>
+                            </div>
+                        </div>
+                        <div className="profileBlock__posts-item-content">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod magnam minus voluptatibus voluptatem cumque similique nobis quibusdam nihil veritatis! Ab recusandae nesciunt doloremque veritatis harum minima ea numquam iure sed.
+                        </div>
+                    </div>
+
+                    <div className="profileBlock__posts-item">
+                        <div className="profileBlock__posts-item-header">
+                            <img src={avatar} alt="User profile image" className="profileBlock__posts-item-img" />
+                            <div className="profileBlock__posts-item-header-userInfo">
+                                <p>{ (user?.first_name && user?.middle_name) ? user?.first_name + ' ' + user?.middle_name : 'Имя не указано' }</p>
+                                <p>Student</p>
+                                <p>1 day ago</p>
+                            </div>
+                        </div>
+                        <div className="profileBlock__posts-item-content">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod magnam minus voluptatibus voluptatem cumque similique nobis quibusdam nihil veritatis! Ab recusandae nesciunt doloremque veritatis harum minima ea numquam iure sed.
+                        </div>
+                    </div>
                 </div>
+                
                 <div className="profileBlock__info-stats">
                     <div className="profileBlock__info-stats-contacts">
                         <p>Contact information</p>
@@ -111,11 +141,63 @@ export const Profile = () => {
                     </div>
 
                     <div className="profileBlock__info-stats-followers">
-
+                        <p>Followers</p>
+                        <div className="profileBlock__info-stats-followers-list">
+                            <div className="profileBlock__follower-user">
+                                <img src={userLogo} alt="" />
+                                <p>Maria</p>
+                            </div>
+                            <div className="profileBlock__follower-user">
+                                <img src={userLogo} alt="" />
+                                <p>Andrei</p>
+                            </div>
+                            <div className="profileBlock__follower-user">
+                                <img src={userLogo} alt="" />
+                                <p>Yauhen</p>
+                            </div>
+                            <div className="profileBlock__follower-user">
+                                <img src={userLogo} alt="" />
+                                <p>Anton</p>
+                            </div>
+                            <div className="profileBlock__follower-user">
+                                <img src={userLogo} alt="" />
+                                <p>Igor</p>
+                            </div>
+                            <div className="profileBlock__follower-user">
+                                <img src={userLogo} alt="" />
+                                <p>Semen</p>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="profileBlock__info-stats-following">
-
+                        <p>Following</p>
+                        <div className="profileBlock__info-stats-followings-list">
+                            <div className="profileBlock__following-user">
+                                <img src={userLogo} alt="" />
+                                <p>Maria</p>
+                            </div>
+                            <div className="profileBlock__following-user">
+                                <img src={userLogo} alt="" />
+                                <p>Andrei</p>
+                            </div>
+                            <div className="profileBlock__following-user">
+                                <img src={userLogo} alt="" />
+                                <p>Yauhen</p>
+                            </div>
+                            <div className="profileBlock__following-user">
+                                <img src={userLogo} alt="" />
+                                <p>Anton</p>
+                            </div>
+                            <div className="profileBlock__following-user">
+                                <img src={userLogo} alt="" />
+                                <p>Igor</p>
+                            </div>
+                            <div className="profileBlock__following-user">
+                                <img src={userLogo} alt="" />
+                                <p>Semen</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
