@@ -29,7 +29,7 @@ export const tokensSlice = createSlice({
       state.isLoading = false;
 
       state.error = action.payload.message;
-    }
+    },
   },
 });
 

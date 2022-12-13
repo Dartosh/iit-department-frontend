@@ -16,8 +16,6 @@ import usersService from '../../services/users';
 
 export const fetchTokens = (username: string, password: string) => {
   return async (dispatch: AppDispatch) => {
-    const authBody = new AuthBodyBuilder(username, password);
-
     try {
       dispatch(tokensSlice.actions.fetching());
 
