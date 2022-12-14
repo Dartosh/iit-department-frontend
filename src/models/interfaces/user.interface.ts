@@ -15,6 +15,8 @@ export interface UserInterface {
 
   phone: string | null;
 
+  email: string | null;
+
   avatar: string | null;
 
   bio: string | null;
@@ -30,4 +32,8 @@ export interface UserInterface {
   profile_views: number | null;
 
   contacts_number: number | null;
+
+  followers: number | null;
+
+  following: number | null;
 }
